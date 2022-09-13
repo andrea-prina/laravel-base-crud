@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ $comic->id }}</td>
                 <td>{{ $comic->series }}</td>
-                <td>{{ $comic->title }}</td>
+                <td><a href="{{ route('comics.show', $comic->slug) }}">{{ $comic->title }}</a></td>
                 <td>{{ $comic->sale_date }}</td>
                 <td>{{ $comic->price }}</td>
             </tr>
