@@ -9,15 +9,25 @@
 </head>
 <body>
     
-    @include('includes.header')
+
+    <header class="container-fluid">
     
-    <main>
+        @include('includes.header')
+    
+    </header>
+    
+    <main class="container my-5">
 
         @yield('main-content')
     
     </main>
     
-    @include('includes.footer')
+    <footer class="container">
+
+        @include('includes.footer')
+
+    </footer>
+    
     
     <script src="{{ asset('js/app.js') }}"></script>
 
