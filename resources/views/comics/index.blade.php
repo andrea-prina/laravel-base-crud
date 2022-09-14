@@ -12,6 +12,7 @@
             <th scope="col">Title</th>
             <th scope="col">Sale Date</th>
             <th scope="col">Price</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -20,9 +21,10 @@
             <tr>
                 <td>{{ $comic->id }}</td>
                 <td>{{ $comic->series }}</td>
-                <td><a href="{{ route('comics.show', $comic->slug) }}">{{ $comic->title }}</a></td>
+                <td><a href="{{ route('comics.show', $comic->slug) }}" class="text-decoration-none">{{ $comic->title }}</a></td>
                 <td>{{ $comic->sale_date }}</td>
                 <td>{{ $comic->price }}</td>
+                <td><a href="" class="text-decoration-none"><i class="fa-solid fa-pen-to-square"></i></a></td>
             </tr>
             
         @empty
