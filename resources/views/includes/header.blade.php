@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.home') }}">Home</a>
+                    <a class="nav-link {{ request()->routeIs('admin.home') ? 'active' : '' }}" aria-current="page" href="{{ route('admin.home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('comics.index') }}">Comics</a>
+                    <a class="nav-link {{ request()->routeIs('comics.index') || request()->routeIs('comics.show') ? 'active' : '' }}" href="{{ route('comics.index') }}">Comics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('comics.create') }}">Add Comic</a>
+                    <a class="nav-link  {{ request()->routeIs('comics.create') ? 'active' : '' }}" href="{{ route('comics.create') }}">Add Comic</a>
                 </li>
             </ul>
         </div>
