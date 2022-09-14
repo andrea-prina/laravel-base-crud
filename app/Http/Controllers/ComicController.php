@@ -49,7 +49,7 @@ class ComicController extends Controller
     public function show($slug)
     {
         $comic = Comic::where('slug', $slug)->first();
-        return view('comics.details', compact('comic'));
+        return view('comics.show', compact('comic'));
     }
 
     /**
