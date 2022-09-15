@@ -10861,3 +10861,9 @@ textarea.form-control-lg {
   border: 0;
   background-color: rgba(0, 0, 0, 0);
 }
+
+.comics-show img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
