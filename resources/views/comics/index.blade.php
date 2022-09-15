@@ -67,9 +67,9 @@
 
                 console.log(comicTitle);
 
-                const result = window.confirm(`Do you REALLY want to delete ${comicTitle} ?`);
+                let checkDelete = prompt(`Type ${comicTitle} to DELETE`)
 
-                if (result) {
+                if (checkDelete == comicTitle) {
                     this.submit();
                 }
             })
