@@ -33,12 +33,10 @@
                 <td>{{ $comic->price }}</td>
                 <td><a href="{{ route('comics.edit', $comic->id) }}" class="text-decoration-none"><i class="fa-solid fa-pen-to-square"></i></a></td>
                 <td>
-                    <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="post" class="delete-form" data-comic-title="{{ $comic->title }}">
                         @method('DELETE')
                         @csrf
-
                         <button type="submit"><i class="fa-solid fa-trash"></i></button>
-
                     </form>
                 </td>
             </tr>
@@ -53,4 +51,29 @@
     </tbody>
 </table>
 
+@endsection
+
+@section('footer-scripts')
+    <script>
+
+        const deleteFormButton = document.querySelectorAll('.delete-form');
+
+        deleteFormButton.forEach(element => {
+            element.addEventListener('submit', function(event){
+
+                const comicTitle = this.getAttribute('data-comic-title');
+
+                event.preventDefault();
+
+                console.log(comicTitle);
+
+                const result = window.confirm(`Do you REALLY want to delete ${comicTitle} ?`);
+
+                if (result) {
+                    this.submit();
+                }
+            })
+        });
+
+    </script>
 @endsection
