@@ -52,7 +52,7 @@ class ComicController extends Controller
         $newComic->slug = Str::slug($data['title'], '-') . '-' . rand(); //Example slug, not 100% unique
         $newComic->save();
 
-        return redirect()->route('comics.show', $newComic->slug);
+        return redirect()->route('comics.index')->with('new_entry', $newComic->title);
     }
 
     /**
@@ -111,6 +111,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('delete', $comic->title);
     }
 }

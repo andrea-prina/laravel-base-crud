@@ -4,6 +4,12 @@
 
 @section('main-content')
 
+@if (session('delete'))
+    <div class="alert alert-danger">{{ session('delete') }} has been deleted</div>
+@elseif (session('new_entry'))
+    <div class="alert alert-success">{{ session('new_entry') }} has been added</div>
+@endif
+
 <table class="table">
     <thead>
         <tr>
