@@ -87,7 +87,19 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sentData = $request->all();
+        $comic = Comic::findOrFail($id);
+        
+        if($sentData['title'] != $comic['title']){
+            $sentData['slug'] = Str::slug($sentData['title'], '-') . '-' . rand(); // Create new slug (example, not 100% unique) based on the new title, if different
+        } else {
+            $sentData['slug'] = $comic['slug'];
+        }
+
+        $comic->update($sentData);
+
+        return redirect()->route('comics.index');
+
     }
 
     /**
