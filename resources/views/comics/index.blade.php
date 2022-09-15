@@ -24,7 +24,7 @@
                 <td><a href="{{ route('comics.show', $comic->slug) }}" class="text-decoration-none">{{ $comic->title }}</a></td>
                 <td>{{ $comic->sale_date }}</td>
                 <td>{{ $comic->price }}</td>
-                <td><a href="" class="text-decoration-none"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="{{ route('comics.edit', $comic->id) }}" class="text-decoration-none"><i class="fa-solid fa-pen-to-square"></i></a></td>
             </tr>
             
         @empty
