@@ -42,14 +42,14 @@ class ComicController extends Controller
         $data = $request->all();
 
         $newComic = new Comic();
-        $newComic->title = $data['comic-title'];
-        $newComic->description = $data['comic-description'];
-        $newComic->thumb = $data['comic-img-url'];
-        $newComic->price = $data['comic-price'];
-        $newComic->series = $data['comic-series'];
-        $newComic->sale_date = $data['comic-sale-date'];
-        $newComic->type = $data['comic-type'];
-        $newComic->slug = Str::slug($data['comic-title'], '-') . '-' . rand(); //Example slug, not 100% unique
+        $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = $data['price'];
+        $newComic->series = $data['series'];
+        $newComic->sale_date = $data['sale-date'];
+        $newComic->type = $data['type'];
+        $newComic->slug = Str::slug($data['title'], '-') . '-' . rand(); //Example slug, not 100% unique
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->slug);
