@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comic;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,7 +11,9 @@ class HomeController extends Controller
     public function index(){
 
         $totalComics = Comic::all()->count();
-        $newComics = Comic::where('created_at', '>', '2022-09-14 00:00:00')->count();
+        $firstUploadDate = DB::table('comics')->select('created_at')->orderBy('created_at')->first();
+        $firstUploadDate = $firstUploadDate->created_at;
+        $newComics = Comic::where('created_at', '>', $firstUploadDate)->count();
         $totalComicsValue = Comic::sum('price');
 
         $dashboardInfo = [
