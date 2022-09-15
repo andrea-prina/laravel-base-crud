@@ -5,6 +5,11 @@
 @section('main-content')
 
     <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h1>WELCOME TO YOUR ADMINISTRATOR DASHBOARD</h1>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-4 text-center">
             <h1 class="fw-bolder">{{ $dashboardInfo['totalComics'] }}</h1>
             <h3>TOTAL COMICS</h3>
