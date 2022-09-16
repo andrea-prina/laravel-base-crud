@@ -21,7 +21,7 @@
 <div class="col-3">
     <label for="input-type" class="form-label">Type</label>
     <select id="input-type" class="form-select" name="type">
-        <option @if($comic->type == '') selected @endif>Choose...</option>
+        <option @if($comic->type == '') selected @endif value=""></option>
         <option @if($comic->type == 'comic book') selected @endif>comic book</option>
         <option @if($comic->type == 'graphic novel') selected @endif>graphic novel</option>
     </select>
