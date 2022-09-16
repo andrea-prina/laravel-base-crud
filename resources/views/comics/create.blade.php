@@ -20,7 +20,7 @@
 
     @csrf
 
-    @include('includes.comics_create&edit')
+    @include('includes.comics_form')
 
 </form>
 
