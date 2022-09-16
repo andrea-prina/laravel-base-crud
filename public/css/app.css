@@ -10862,6 +10862,13 @@ textarea.form-control-lg {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.validation-error-msg {
+  position: absolute;
+  left: 10px;
+  bottom: 2px;
+  font-style: italic;
+}
+
 .comics-show img {
   -o-object-fit: cover;
      object-fit: cover;

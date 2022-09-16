@@ -4,3 +4,10 @@
     border: 0;
     background-color: rgba($color: #000000, $alpha: 0.0);
 }
+
+.validation-error-msg {
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    font-style: italic;
+}
